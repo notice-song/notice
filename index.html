@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 정보보호 인재양성 교육사업 성과공유회</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #020b26;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+      font-family: sans-serif;
+    }
+
+    /* 이미지 감싸는 래퍼 */
+    .poster-wrapper {
+      position: relative;
+      width: 60vw;   /* PC: 화면 가로 60% */
+    }
+
+    /* 이미지 자체는 항상 래퍼 100% 채움 */
+    .poster-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 사전등록 버튼 클릭 영역 (이미지 위 투명 div) */
+    .register-btn {
+      position: absolute;
+
+      /* 가로 중앙 정렬 */
+      left: 50%;
+      transform: translateX(-50%);
+
+      /* 세로 위치 (이미지 기준 비율) */
+      top: 61%;
+
+      /* 버튼 크기: 이미지 가로 대비 비율 */
+      width: 28%;
+      height: 2%;
+
+      cursor: pointer;
+      background: transparent; /* 실제 적용 시 투명 처리 */
+      /* 디버깅할 때만 사용
+      background: rgba(255, 0, 0, 0.3);
+      */
+    }
+
+    /* QR 코드 이미지 (PC 전용) */
+    .qr-img {
+      position: absolute;
+
+      left: 75%;
+      transform: translateX(-50%);
+      top: 61%;
+
+      width: 10%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    /* 모바일(가로 768px 이하)에서는 이미지 너비 100vw + QR 숨김 */
+    @media screen and (max-width: 768px) {
+      .poster-wrapper {
+        width: 100vw;
+      }
+
+      .qr-img {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster-wrapper">
+    <img
+      src="./image.png"
+      alt="2025 정보보호 인재양성 교육사업 성과공유회 포스터"
+      class="poster-img"
+    />
+
+    <!-- 사전등록 버튼: 클릭 시 구글폼 이동 -->
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeDWX9jwNz5xCNOfmkIzFKs2FfiJtkq89J2XEpkQ45Rl4tmIA/viewform"
+      class="register-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    ></a>
+
+    <!-- QR 코드: PC에서만 보이도록 CSS로 제어 -->
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeDWX9jwNz5xCNOfmkIzFKs2FfiJtkq89J2XEpkQ45Rl4tmIA/viewform"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="./qr_code.png"
+        alt="사전등록용 QR 코드"
+        class="qr-img"
+      />
+    </a>
+  </div>
+</body>
+</html>
